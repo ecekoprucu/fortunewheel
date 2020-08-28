@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Çarkıfelek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div id="selector"></div>
+    <div class="circle">
+        <ul>
+            <li class="part yellow" id="one">
+                <div class="slice"></div>
+            </li>
+            <li class="part blue" id="two">
+                <div class="slice"></div>
+            </li>
+            <li class="part red" id="three">
+                <div class="slice"></div>
+            </li>
+            <li class="part green" id="four">
+                <div class="slice"></div>
+            </li>
+            <li class="part yellow" id="five">
+                <div class="slice"></div>
+            </li>
+            <li class="part blue" id="six">
+                <div class="slice"></div>
+            </li>
+            <li class="part red" id="seven">
+                <div class="slice"></div>
+            </li>
+            <li class="part green" id="eight">
+                <div class="slice"></div>
+            </li>
+            <li class="part yellow" id="nine">
+                <div class="slice"></div>
+            </li>
+            <li class="part blue" id="ten">
+                <div class="slice"></div>
+            </li>
+            <li class="part red" id="eleven">
+                <div class="slice"></div>
+            </li>
+            <li class="part green" id="twelve">
+                <div class="slice"></div>
+            </li>
+            <li class="part yellow" id="thirteen">
+                <div class="slice"></div>
+            </li>
+            <li class="part blue" id="fourteen">
+                <div class="slice"></div>
+            </li>
+            <li class="part red" id="fifteen">
+                <div class="slice"></div>
+            </li>
+            <li class="part green" id="sixteen">
+                <div class="slice"></div>
+            </li>
+        </ul>
+        <div class="hole"></div>
+    </div>
+    <button id="button">Çevir!</button>
+    <div id="dialog" style="display:none;" title="TEBRİKLER!">
+        <p></p>
+    </div>
+    <audio
+            id="audio2"
+           preload="auto"
+           src="http://medyanet.doracdn.com/proje/rm360/fortunewheel/Wheel_of_fortune.mp3" >
+        <p>Your browser does not support the audio element</p>
+    </audio>
+</div>
+
+
+<script>
+    var added= false;
+    var button = document.getElementById("button");
+
+    function addMe(){
+        var s = document.createElement("script");
+        s.id="script";
+        s.type = "text/javascript";
+        s.src = "fortune.js";
+        if(!added){
+            document.getElementsByTagName("body")[0].appendChild(s);
+            added=true;
+
+        } else {
+            var y= document.getElementById("script");
+
+            y.parentElement.removeChild(y);
+            document.getElementsByTagName("body")[0].appendChild(s);
+        }
+
+
+    }
+
+    button.addEventListener("click",addMe);
+</script>
+</body>
+</html>
